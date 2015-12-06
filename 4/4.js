@@ -4,35 +4,33 @@ var md5 = require('md5');
 
 var input = 'yzbqklnj';
 
-function checkmd5(input) {
-    return md5(input).substring(0,5) === '00000';
+
+function checkMd5(input, length) {
+    return md5(input).substring(0, length) === Array(length+1).join('0');
 }
 
-function checkmd52(input) {
-    return md5(input).substring(0,6) === '000000';
-}
-
-if (checkmd5(input)) {
+if (checkMd5(input, 5)) {
     console.log(input);
 }
 
 var i = 0;
-while (!checkmd5(input + '' + i)) {
+while (!checkMd5(input + '' + i, 5)) {
     i++;
 }
 
-console.log(input + '' + i);
+console.log(i);
 console.log(md5(input + '' + i));
 
+
 // Second scenario
-if (checkmd52(input)) {
+if (checkMd5(input, 6)) {
     console.log(input);
 }
 
 var i = 0;
-while (!checkmd52(input + '' + i)) {
+while (!checkMd5(input + '' + i, 6)) {
     i++;
 }
 
-console.log(input + '' + i);
+console.log(i);
 console.log(md5(input + '' + i));
