@@ -1,0 +1,22 @@
+{
+  "name": "adventofcode",
+  "version": "1.0.0",
+  "description": "My solutions for the [Advent of Code](http://www.adventofcode.com). Nothing more, nothing less.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fredrikln/advent-of-code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredrikln/advent-of-code/issues"
+  },
+  "homepage": "https://github.com/fredrikln/advent-of-code",
+  "dependencies": {
+    "md5": "^2.0.0"
+  }
+}
