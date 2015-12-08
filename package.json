@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/fredrikln/advent-of-code",
   "dependencies": {
-    "md5": "^2.0.0"
+    "md5": "^2.0.0",
+    "sleep": "^3.0.0"
   }
 }
