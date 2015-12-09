@@ -35,10 +35,38 @@ for (var i in input) {
     data[toLocation][fromLocation] = distance;
 }
 
-function findLongestPath(location, locations, visited) {
+function findLongestPath(location, locations, visited, totalDistance) {
 
+    if (Object.keys(locations).length == visited.length) {
+        return totalDistance;
+    }
 
+    var visitedArray = visited.slice(0);
+    visitedArray.push(location);
 
+    var max = 0;
+    for (var i in locations) {
+        if (visited.indexOf(i) > -1) {
+            continue;
+        }
+
+        var newTotal = totalDistance + locations[location][i];
+
+        var distance = findLongestPath(i, locations, visitedArray, newTotal);
+        if (distance > max) {
+            max = distance;
+        }
+    }
+
+    return max;
+
+}
+
+for (var i in data) {
+    var location = i;
+    var visited = [i];
+
+    console.log(i, findLongestPath(location, data, visited, 0));
 }
 
 console.log(data);
